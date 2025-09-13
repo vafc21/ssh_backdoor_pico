@@ -128,3 +128,6 @@ sendline("if ($ok -and (Test-Path $log)) { Write-Host ('[log] Updated: ' + $log)
 sendline("Get-Service sshd | Format-Table Name,Status,StartType -Auto")
 sendline("if (Get-NetTCPConnection -LocalPort 22 -State Listen -ErrorAction SilentlyContinue) "
         "{ Write-Host '[sshd] Listening on port 22' } else { Write-Host '[sshd] Not listening yet' }")
+
+while True:
+    time.sleep(1)
